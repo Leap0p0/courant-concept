@@ -245,7 +245,7 @@ function initWizard() {
 
 /* ---------- Intro : une fiche se branche dans le « C » du logo ---------- */
 function initIntro() {
-  if (!document.body.hasAttribute("data-intro")) return;
+  if (!document.body.hasAttribute("data-intro") || /[?&]nointro/.test(location.search)) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   var el = document.createElement("div");
